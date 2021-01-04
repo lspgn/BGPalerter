@@ -77,6 +77,7 @@ export default class Worker {
             try {
                 fs.writeFileSync(this.config.pidFile, process.pid);
             } catch (error) {
+                console.log(error);
                 this.logger.log({
                     level: 'error',
                     message: "Cannot write pid file: " + error
