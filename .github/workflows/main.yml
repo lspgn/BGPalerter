@@ -30,7 +30,7 @@ jobs:
       if: ${{ always() }}
       with:
         name: logs
-        path: .npm/_logs/*
+        path: /home/runner/.npm/_logs/*
         retention-days: 14
 
   test:
@@ -68,5 +68,5 @@ jobs:
       if: ${{ always() }}
       with:
         name: logs
-        path: .npm/_logs/*
+        path: /home/runner/.npm/_logs/*
         retention-days: 14
