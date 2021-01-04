@@ -401,14 +401,18 @@ describe("Core functions", function() {
         it("write pid file", function (done) {
             const file = config.pidFile;
             expect("bgpalerter.pid").to.equal(file);
+            
+            console.log(file);
 
             if (file) {
                 readLastLines
                     .read(file, 1)
                     .then((line) => {
+                    console.log(line);
                         expect(parseInt(line)).to.equal(process.pid);
                         done();
-                    });
+                    })
+                    .catch(console.log)
             }
         });
 
